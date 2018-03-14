@@ -1,55 +1,29 @@
-/* global */
+
+/****** global ******/
+
 *{
-    margin:0;
-    padding:0;
+    margin:0px;
+    padding:0px;
     text-decoration:none;
     box-sizing: border-box;
-  }
-
-html{
-    height: 100%;
-    width: 100%;  
 }
 
 body {
-    /* background: #fff url(imgs/crumbled-paper.jpeg);
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -ms-background-size: cover;
-    -o-background-size: cover; */
-    background: rgb(255, 235, 208);
-    /* background: linear-gradient(#999, #666); */
-    /* background: linear-gradient(#070df9, #24222d); */
-    /* background: linear-gradient(#a407f9, #070df9); */
     margin: 0;
     padding: 0;
-    /* font-family: 'Lato-light', sans-serif; */
     font-family: 'Raleway', sans-serif;
-    /* font-family: 'Roboto', sans-serif;
-    font-weight: 100; */
     font-weight: lighter;
     color: #000;
-    overflow: hidden;
 }
 
 .container {
-    width: 100vw;
+    width: 100%;
     max-width: 1500px;
     margin: 0;
     padding: 0;
-    position: relative;
     transition: all 0.3s;
 }
 
-h1 {
-    font-size: 5em;
-}
-
-h4 {
-    font-size: 1.1em;
-    font-weight: bold;
-}
 
 
 
@@ -57,14 +31,14 @@ h4 {
 #logo span {
     position: fixed;
     left: 85px;
-    top: 17px;
+    top: 20px;
     color: #8b6800;
     /* font-family: 'Playfair Display', serif; */
     font-family: 'Rozha One', serif;
     font-size: 1.75em;
     text-transform: uppercase;
     font-weight: lighter;
-    /* z-index: 1000000; */
+    z-index: 1000000;
 }
 
 #tree-logo {
@@ -77,10 +51,13 @@ h4 {
 
 
 
-/* Burger */
+
+
+/****** Burger ******/
+
 .toggle {
     list-style: none;
-    position: absolute;
+    position: fixed;
     right: 0px;
     top: 0;
     cursor: pointer;
@@ -119,19 +96,24 @@ background: #9c7910;
 }
 
 
-/* the navigation lightbox */
+
+
+
+
+/****** the navigation lightbox ******/
+
 .lightbox {
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     /* background: #b2f95f; */
     background: #d7fa95;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     transition: all 1s;
     opacity: 0;
-    z-index: 1000;
+    z-index: 0;
 
     display: flex;
     justify-content: center;
@@ -140,6 +122,7 @@ background: #9c7910;
 
 .lightbox-open {
     opacity: 1;
+    z-index: 10000;
 }
 
 .nav-list {
@@ -154,8 +137,6 @@ background: #9c7910;
 
 .nav-list li a {
     color: #9c7910;
-    /* font-family: 'Roboto', sans-serif;
-    font-weight: 100; */
     font-family: 'Raleway', sans-serif;
     transition: ease-in-out .2s;
     -webkit-transition: ease-in-out .2s;
@@ -169,8 +150,6 @@ background: #9c7910;
     font-weight: 100;
     color: #c79e21;
     font-size: 1.1em;
-    /* margin-left: 100px; */
-    /* text-decoration: line-through; */
 }
 
 .nav-list-entry-animation {
@@ -194,10 +173,13 @@ background: #9c7910;
 
 
 
-/* hero section */
+/****** hero section ******/
 
 .hero-section {
+    width: 100%;
     height: 100vh;
+    background: rgb(255, 235, 208);
+    transform: translateY(-50px);
 }
 
 .hero {
@@ -209,6 +191,8 @@ background: #9c7910;
 }
 
 .hero h1 {
+    font-size: 5em;
+    display: inline-block;
     color: rgb(93, 224, 124);
     animation: slideInLeft 1s;
     -webkit-animation: slideInLeft 1s;
@@ -218,6 +202,8 @@ background: #9c7910;
 }
 
 .hero h4 {
+    font-size: 1.1em;
+    font-weight: bold;
     animation: slideInLeft 1s;
     -webkit-animation: slideInLeft 1s;
     -moz-animation: slideInLeft 1s;
@@ -237,45 +223,48 @@ background: #9c7910;
     color: #666;
 }
 
-#CTA {
+.hero button {
     cursor: pointer;
     padding: 15px 0px;
     margin-left: 3px;
     border: none;
     border-radius: 28px 5px 28px 8px;
-    background: #8b6800;
-    color: #fff;
+    background: rgb(136, 253, 164);
+    color: #444;
     font-family: 'Raleway', serif;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-style: normal;
     font-weight: 100;
     text-align: center;
     letter-spacing: 2px;
     opacity: 0;
 
-    z-index: 100;
-    position: fixed;
+    z-index: 1000;
+    position: absolute;
     top: 50%;
-    right: 100px;
-    margin-top: -45px;
+    right: 10%;
+    transform: translateX(700px);
+    margin-top: 25px;
     width: 550px;
 
-    /* box-shadow: -2 -2 25px #000; */
-    /* filter: drop-shadow(0 0 30px #333); */
+    animation: pulse-pulse 4s ease forwards 1s;
+    transition: .5s ease;
+}
 
-    animation: pulse-pulse 3s ease forwards 1s;
-    transition: .5s;
+.hero button:hover {
+    background: #8b6800;
+    color: #fff;
+    padding: 25px 0px;
+    width: 600px;
+    margin-top: -10px;
 }
 
 @keyframes pulse-pulse {
     0% {
         opacity: 0;
     }
-    /* 50% {
-        opacity: .6;
-    } */
     100% {
-        opacity: .6;
+        opacity: .9;
     }
 }
 
@@ -296,15 +285,52 @@ background: #9c7910;
 
 
 
+/****** scroll section ******/
+
+.scroll-section {
+    width: 100%;
+    /* height: 800px; */
+    /* background: rgb(213, 216, 218); */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.col {
+    width: 50%;
+}
+
+.col img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/*****************************  start media queries **************************/
 
 
 /* media query laptop */
 @media all and (max-width: 1299px) {
 
-    #CTA {
+    .hero button {
         top : 75%;
         width: 400px;
         font-size: .8em;
+        font-weight: 300;
+    }
+
+    .hero button:hover {
+        background: #8b6800;
+        color: #fff;
+        font-size: 1em;
+        padding: 25px 0px;
+        width: 475px;
+        margin-top: -55px;
     }
 
 }
@@ -355,7 +381,7 @@ background: #9c7910;
         padding-top: 10px;
     }
 
-    #CTA {
+    .hero button {
         top : 75%;
         width: 220px;
         font-size: .8em;
@@ -366,4 +392,143 @@ background: #9c7910;
         border-radius: 8px;
     }
 
+    .hero button:hover {
+        background: #8b6800;
+        color: #fff;
+        font-size: .9em;
+        padding: 20px 0px;
+        width: 240px;
+        margin-left: -120px;
+        margin-top: -55px;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*************************************** BUBBLY BUTTON CSS *******************************************/
+
+/* $fuschia: #ff0081;
+$button-bg: $fuschia;
+$button-text-color: #fff;
+$baby-blue: #f8faff; */
+
+
+/* .bubbly-button{
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  display: inline-block;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $button-bg;
+  color: $button-text-color;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  
+  &:focus {
+    outline: 0;
+  }
+  
+  &:before, &:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+  }
+  
+  &:before{
+    display: none;
+    top: -75%;
+    background-image:  
+      radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle,  transparent 20%, $button-bg 20%, transparent 30%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%), 
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+  //background-position: 0% 80%, -5% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 85% 30%;
+  }
+  
+  &:after{
+    display: none;
+    bottom: -75%;
+    background-image:  
+    radial-gradient(circle, $button-bg 20%, transparent 20%), 
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle,  transparent 10%, $button-bg 15%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%),
+    radial-gradient(circle, $button-bg 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+  //background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+ 
+  &:active{
+    transform: scale(0.9);
+    background-color: darken($button-bg, 5%);
+    box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+  }
+  
+  &.animate{
+    &:before{
+      display: block;
+      animation: topBubbles ease-in-out 0.75s forwards;
+    }
+    &:after{
+      display: block;
+      animation: bottomBubbles ease-in-out 0.75s forwards;
+    }
+  }
+}
+
+
+@keyframes topBubbles {
+  0%{
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;}
+ 100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0%{
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;}
+ 100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+  background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+} */

@@ -105,6 +105,81 @@ background: #9c7910;
 
 
 
+
+/****** newsletter-signup ******/
+
+#newsletter-container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    transition: all 1s;
+    opacity: 0;
+    z-index: -1000;
+    /* opacity: 1;
+    z-index: 100000000000; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter-open {
+    opacity: 1;
+    z-index: 100000000000;
+}
+
+.newsletter-signup-box {
+    width: 50%;
+    height: 50%;
+    background: #8b6800;
+    text-align: center;
+}
+
+.newsletter-signup-box p {
+    font-size: 2em;
+    color: rgb(93, 224, 124);
+}
+
+.newsletter-signup-box p span {
+    font-size: .5em;
+    color: #d7fa95;
+}
+
+.email-input-box {
+    width: 250px;
+    margin: 10px;
+}
+
+.email-submit-button {
+    display: block;
+    background: rgb(93, 224, 124);
+    color: #444;
+    margin: 50px auto;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.email-signup-flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-flexbox {
+    margin-top: 50px;
+}
+
+#close-button {
+    position: absolute;
+    cursor: pointer;
+    padding: 20px;
+    color: #fff;
+}
+
+
 /****** the navigation lightbox ******/
 
 .lightbox {
@@ -115,7 +190,6 @@ background: #9c7910;
     /* background: #b2f95f; */
     background: #d7fa95;
     position: fixed;
-    z-index: 10;
     transition: all 1s;
     opacity: 0;
     z-index: -100;

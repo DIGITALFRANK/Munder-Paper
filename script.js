@@ -8,6 +8,7 @@ $(document).ready(function(){
     // exit lightbox with escape key
     $(document).on('keyup',function(evt) {
         if (evt.keyCode == 27) {
+            closePopUp();
             $('#nav').removeClass('open');
             $('.lightbox').removeClass('lightbox-open');
             $('.nav-list').toggleClass('nav-list-entry-animation');
@@ -57,7 +58,6 @@ $(document).ready(function(){
 }
 
     // ///////////////////////////// slideshow animation
-
     let current = 0,
     slides = document.getElementsByClassName("slide");
 
@@ -73,7 +73,22 @@ $(document).ready(function(){
 
 
     // ///////////////////////////// email lightbox pop up
+    let newsletter = document.getElementById('newsletter-container');
+    let closeButton = document.getElementById('close-button');
 
+    function emailPopUp () {
+        newsletter.setAttribute('newsletter-open');
+        // $('#newsletter-container').addClass('newsletter-open')
+    }
+    let closePopUp = () => {
+        newsletter.removeClass('nnewsletter-open');
+    }
+
+    setTimeout(emailPopUp(), 2000);
+
+    closeButton.addEventListener('click', () => {
+        closePopUp();
+    })
 
 });
 

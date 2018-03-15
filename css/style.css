@@ -328,6 +328,23 @@ background: #9c7910;
     padding: 0;
 }
 
+.slideshow {
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    position: absolute;
+    transition: opacity 1.5s ease-in;
+  }
+  
+.slide + .slide {
+    opacity: 0;
+}
+
+#mobile-feature {
+    display: none;
+}
 
 
 
@@ -487,6 +504,15 @@ footer {
 
     .col {
         width: 100%;
+    }
+
+    .slideshow  {
+        width: 100%;
+        display: block;
+    }
+
+    #mobile-feature {
+        display: block;
     }
 
     footer {
